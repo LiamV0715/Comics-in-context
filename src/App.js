@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
+import UserInterface from "./components/UserInterface.jsx"
+import StylesContext from "./components/StylesContext.js";
+
+
 function App() {
+ const stylin = {
+    background: "#1ECD97",
+    display: "block",
+    width: 150,
+    height: 70,
+    fontSize: 18,
+    letterSpacing: 1,
+    border: "2px solid #1ECD97",
+    borderRadius: 15
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <main>
+      
+    <StylesContext.Provider value={stylin}>
+        <h1
+          style={{
+            color: "#FEE001",
+            fontFamily: "Luminari, fantasy",
+            fontSize: 50
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Welcome to Comics Galore!
+        </h1>
+        <UserInterface />
+        </StylesContext.Provider>
+
+    </main>
+
   );
 }
 
-export default App;
+export default App;             
